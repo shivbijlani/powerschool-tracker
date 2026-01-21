@@ -205,7 +205,13 @@
             <p style="font-size: 1.2rem; margin-bottom: 1rem;"><strong>Starting from scratch? Copy this ONE command!</strong></p>
             <p>Open PowerShell (search for "PowerShell" in Start menu, right-click, "Run as Administrator") and paste:</p>
             <div class="code-box">winget install Microsoft.VisualStudioCode Git.Git OpenJS.NodeJS</div>
-            <p style="margin-top: 1rem;">This installs VS Code, Git, and Node.js all at once. Then skip to <strong>Step 3</strong> below!</p>
+            <p style="margin-top: 1rem;">This installs:</p>
+            <ul style="margin-left: 2rem;">
+                <li><strong>VS Code</strong> - Code editor with Copilot</li>
+                <li><strong>Git</strong> - Downloads the project</li>
+                <li><strong>Node.js</strong> - Runs the browser automation (includes npm)</li>
+            </ul>
+            <p style="margin-top: 1rem;">After install completes, <strong>close and reopen PowerShell</strong>, then skip to <strong>Step 3</strong> below!</p>
             
             <p style="margin-top: 1.5rem;"><strong>Alternative:</strong> Use Ninite to install everything with clicks:</p>
             <a href="https://ninite.com/vscode-git-nodejs/" class="download-btn" target="_blank">Install with Ninite</a>
@@ -234,14 +240,15 @@
             <div class="step">
                 <span class="step-number">2</span>
                 <h3>Install Git & Node.js</h3>
-                <p>Git downloads code from GitHub. Node.js runs the automation tool.</p>
+                <p>Git downloads code from GitHub. Node.js runs the automation tool (includes npm for packages).</p>
                 <p><strong>Windows Quick Install:</strong></p>
                 <div class="code-box">winget install Git.Git OpenJS.NodeJS</div>
+                <p style="margin-top: 1rem;"><strong>After install, close and reopen any open terminals!</strong></p>
                 <p style="margin-top: 1rem;">Or download manually:</p>
                 <a href="https://git-scm.com/downloads" class="download-btn" target="_blank">Download Git</a>
                 <a href="https://nodejs.org/" class="download-btn" target="_blank">Download Node.js</a>
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
-                    Run the installers. <strong>Accept all defaults</strong> - just keep clicking "Next".
+                    Run the installers. <strong>Accept all defaults</strong> - just keep clicking "Next". <strong>Both Git and Node.js are required!</strong>
                 </p>
             </div>
             
@@ -336,6 +343,9 @@
             
             <h3 style="margin-top: 1.5rem;">Copilot doesn't respond</h3>
             <p>Make sure you're signed in to GitHub Copilot. Look for the Copilot icon in the bottom-right of VS Code - it should show a checkmark.</p>
+            
+            <h3 style="margin-top: 1.5rem;">npm command not found?</h3>
+            <p>Node.js might not be installed or you need to restart VS Code after installing it. Close VS Code completely and reopen it, or install Node.js from <a href="https://nodejs.org/" target="_blank">nodejs.org</a>.</p>
             
             <h3 style="margin-top: 1.5rem;">Don't have PowerShell as Administrator?</h3>
             <p>No problem! Just download the installers manually from the links in each step. Or use the Ninite link at the top.</p>
