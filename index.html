@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PowerSchool Tracker - Track Your Kids' Grades Automatically</title>
     <script>
+        // Detect OS and show appropriate instructions
+        function detectOS() {
+            const userAgent = window.navigator.userAgent.toLowerCase();
+            const macosPlatforms = /(macintosh|macintel|macppc|mac68k|macos)/i;
+            const windowsPlatforms = /(win32|win64|windows|wince)/i;
+            
+            if (macosPlatforms.test(userAgent)) {
+                document.body.classList.add('mac-os');
+            } else if (windowsPlatforms.test(userAgent)) {
+                document.body.classList.add('windows-os');
+            } else {
+                // Default to showing both
+                document.body.classList.add('windows-os');
+            }
+        }
+        
         function copyToClipboard() {
             const code = `# Install VS Code, Git, Node.js and fix PowerShell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
@@ -38,6 +54,41 @@ Write-Host "\`n✅ DONE! Double-click 'PowerSchool Tracker' on your desktop to g
                 }, 2000);
             });
         }
+        
+        function copyMacScript() {
+            const code = `#!/bin/bash
+# Install Homebrew if not installed
+if ! command -v brew &> /dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# Install VS Code, Git, Node.js
+brew install --cask visual-studio-code
+brew install git node
+
+# Clone the project
+cd ~
+git clone https://github.com/shivbijlani/powerschool-tracker.git
+
+# Open in VS Code
+code ~/powerschool-tracker
+
+echo "✅ DONE! VS Code should open with the project loaded."`;
+            
+            navigator.clipboard.writeText(code).then(() => {
+                const button = document.getElementById('copyMacButton');
+                const originalText = button.innerHTML;
+                button.innerHTML = '✅ Copied!';
+                button.style.background = '#22c55e';
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = '#667eea';
+                }, 2000);
+            });
+        }
+        
+        // Run on page load
+        window.addEventListener('DOMContentLoaded', detectOS);
     </script>
     <style>
         * {
@@ -198,6 +249,13 @@ Write-Host "\`n✅ DONE! Double-click 'PowerSchool Tracker' on your desktop to g
             margin: 1rem 0;
             border-radius: 4px;
         }
+        
+        /* OS-specific display */
+        .windows-only { display: none; }
+        .mac-only { display: none; }
+        
+        .windows-os .windows-only { display: block; }
+        .mac-os .mac-only { display: block; }
     </style>
 </head>
 <body>
@@ -235,7 +293,8 @@ Write-Host "\`n✅ DONE! Double-click 'PowerSchool Tracker' on your desktop to g
             </div>
         </div>
         
-        <div class="section" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);">
+        <!-- Windows Setup -->
+        <div class="section windows-only" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);">
             <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">🚀 Quick Setup for Windows</h2>
             <p style="font-size: 1.2rem; margin-bottom: 1.5rem; opacity: 0.95;">Complete automated installation script — installs tools, downloads project, creates desktop shortcut</p>
             
@@ -288,8 +347,59 @@ Write-Host "`n✅ DONE! Double-click 'PowerSchool Tracker' on your desktop to ge
             </div>
             
             <p style="margin-top: 1.5rem; padding: 1rem; background: rgba(0,0,0,0.2); border-radius: 6px; font-size: 0.9rem;">
-                <strong>🔒 Safe & Open Source:</strong> All code is visible above and on <a href="https://github.com/shivbijlani/powerschool-tracker" style="color: #fde68a;" target="_blank">GitHub</a>. This uses Microsoft's official package manager (winget) to install legitimate software.<br><br>
-                <strong>⚠️ No winget?</strong> Install <a href="https://code.visualstudio.com/Download" style="color: #fde68a;" target="_blank">VS Code</a>, <a href="https://git-scm.com/downloads" style="color: #fde68a;" target="_blank">Git</a>, <a href="https://nodejs.org/" style="color: #fde68a;" target="_blank">Node.js</a> manually, then clone: <code style="background: rgba(0,0,0,0.3); padding: 0.2rem 0.5rem; border-radius: 3px;">git clone https://github.com/shivbijlani/powerschool-tracker.git</code>
+                <strong>🔒 Safe & Open Source:</strong> All code is visible above and on <a href="https://github.com/shivbijlani/powerschool-tracker" style="color: #fde68a;" target="_blank">GitHub</a>. This uses Microsoft's official package manager (winget) to install legitimate software.
+            </p>
+        </div>
+        
+        <!-- Mac Setup -->
+        <div class="section mac-only" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; box-shadow: 0 4px 16px rgba(102, 126, 234, 0.3);">
+            <h2 style="color: white; font-size: 2rem; margin-bottom: 1rem;">🚀 Quick Setup for Mac</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 1.5rem; opacity: 0.95;">Complete automated installation script — installs tools, downloads project, opens in VS Code</p>
+            
+            <p style="font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: bold;">Step 1: Open Terminal</p>
+            <p style="font-size: 0.95rem; margin-bottom: 1.5rem; opacity: 0.9;">Press Cmd+Space, type "Terminal", press Enter</p>
+            
+            <p style="font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: bold;">Step 2: Copy the setup script</p>
+            <button id="copyMacButton" onclick="copyMacScript()" style="padding: 0.75rem 1.5rem; font-size: 1rem; background: #667eea; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-bottom: 1rem; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+                📋 Click to Copy Setup Script
+            </button>
+            <div class="code-box" style="font-size: 0.85rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3); text-align: left; max-height: 300px; overflow-y: auto;">#!/bin/bash
+# Install Homebrew if not installed
+if ! command -v brew &> /dev/null; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
+# Install VS Code, Git, Node.js
+brew install --cask visual-studio-code
+brew install git node
+
+# Clone the project
+cd ~
+git clone https://github.com/shivbijlani/powerschool-tracker.git
+
+# Open in VS Code
+code ~/powerschool-tracker
+
+echo "✅ DONE! VS Code should open with the project loaded."</div>
+            
+            <p style="font-size: 1.1rem; margin-top: 1.5rem; font-weight: bold;">Step 3: Paste into Terminal and press Enter</p>
+            <p style="font-size: 0.95rem; opacity: 0.9; margin-bottom: 1rem;">Cmd+V to paste, then hit Enter. Wait 3-5 minutes. You may need to enter your password.</p>
+            
+            <p style="font-size: 1.1rem; font-weight: bold;">Step 4: VS Code will open automatically</p>
+            <p style="font-size: 0.95rem; opacity: 0.9;">The project will be loaded and ready to use!</p>
+            
+            <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.15); border-radius: 6px;">
+                <strong style="font-size: 1rem;">✅ What this script does:</strong>
+                <ul style="margin-left: 2rem; margin-top: 0.5rem; font-size: 0.95rem; line-height: 1.8;">
+                    <li>Installs Homebrew (Mac package manager) if needed</li>
+                    <li>Installs VS Code, Git, and Node.js</li>
+                    <li>Downloads this project to ~/powerschool-tracker</li>
+                    <li>Opens VS Code with the project loaded</li>
+                </ul>
+            </div>
+            
+            <p style="margin-top: 1.5rem; padding: 1rem; background: rgba(0,0,0,0.2); border-radius: 6px; font-size: 0.9rem;">
+                <strong>🔒 Safe & Open Source:</strong> All code is visible above and on <a href="https://github.com/shivbijlani/powerschool-tracker" style="color: #fde68a;" target="_blank">GitHub</a>. This uses Homebrew, the standard Mac package manager.
             </p>
         </div>
         
