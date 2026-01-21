@@ -1,6 +1,6 @@
-# Seattle Schools Tracker
+# PowerSchool Tracker
 
-Track student grades and assignments from Seattle Public Schools PowerSchool portal using automated browser control.
+Track student grades and assignments from PowerSchool using automated browser control powered by GitHub Copilot.
 
 ## 🚀 Quick Start
 
@@ -10,14 +10,14 @@ Track student grades and assignments from Seattle Public Schools PowerSchool por
 
 1. Clone this repo and open in VS Code
 2. Press `Ctrl+Alt+I` to open Copilot Chat
-3. Type: **"Help me track my kids' school in Seattle"**
+3. Type: **"Help me track my kids' school using PowerSchool"**
 4. Copilot handles everything!
 
 ### Manual Setup
 
 ```bash
-git clone https://github.com/shivbijlani/seattle-schools-tracker.git
-cd seattle-schools-tracker
+git clone https://github.com/shivbijlani/powerschool-tracker.git
+cd powerschool-tracker
 npm install
 npm run setup    # Select your browser profile
 npm run start    # Opens PowerSchool, log in and type 'ready'
@@ -50,7 +50,7 @@ You ← Copilot ← web-pilot (files) ← Browser ← PowerSchool
 ## Project Structure
 
 ```
-seattle-schools-tracker/
+powerschool-tracker/
 ├── student-name/          # Created dynamically for each student
 │   ├── 2026-01-20.md     # Today's snapshot
 │   └── 2026-01-18.md     # Previous snapshot
@@ -62,13 +62,13 @@ seattle-schools-tracker/
 └── package.json           # Dependencies
 ```
 
-## Seattle Public Schools PowerSchool
+## PowerSchool Compatibility
 
-- **Portal URL:** https://ps.seattleschools.org
+- **Works with:** Any district using PowerSchool Student Information System
 - **Login:** Parent/guardian account
-- **Compatible with:** PowerSchool Student Information System
+- **Portal URL:** Your district's PowerSchool URL (e.g., `ps.yourdistrict.org`)
 
-This tool is designed specifically for Seattle Public Schools' PowerSchool interface. It may work with other districts using PowerSchool, but YMMV.
+This tool automates PowerSchool portals. It's been tested with Seattle Public Schools but should work with any district using PowerSchool.
 
 ## What Gets Tracked
 
@@ -99,7 +99,7 @@ Each snapshot includes:
 
 ### First Run
 ```
-You: "Help me track my kids' school in Seattle"
+You: "Help me track my kids' school using PowerSchool"
 Copilot: [installs packages, starts browser, waits for login]
 You: "ready"
 Copilot: [detects students, creates folders, captures snapshots]

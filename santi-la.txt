@@ -1,0 +1,35 @@
+The Source
+	
+Parent, Guardian, and Student Login
+Enter your Username and Password
+Username
+Password
+Login
+Parents & Guardians
+Sign Up!
+Forget your password?
+	
+Students
+Log in with your SPS username (without @seattleschools.org) and password.
+See the Student Username and Password page for more information.
+
+PARENTS/GUARDIANS: Your Source username is the email address on the school record. Contact the school to confirm your email address.
+
+LOG IN TROUBLE?
+
+PARENTS/GUARDIANS: Trouble reaching some features? Clear the cache on your browser, close and reopen TWICE to resolve the problem or try a different browser.
+
+STUDENT DEVICE TROUBLE? Email: laptops@seattleschools.org
+
+STUDENT EMAIL ADDRESSES
+
+STUDENT RESOURCES: SOURCE username example: 1student
+
+ELEMENTARY PROGRESS REPORTS & SECONDARY PERFORMANCE REPORTS
+
+STUDENT NAMES AND GENDER DESIGNATIONS
+
+Copyright © 2005-2025 PowerSchool Group LLC and/or its affiliate(s). All rights reserved.
+All trademarks are either owned or licensed by PowerSchool Group LLC and/or its affiliates.
+
+Privacy Policy

@@ -1,12 +1,12 @@
-# GitHub Copilot Instructions for Seattle Schools Tracker
+# GitHub Copilot Instructions for PowerSchool Tracker
 
 ## Overview
 
-This tool tracks student grades and assignments from Seattle Public Schools PowerSchool portal using web-pilot browser automation.
+This tool tracks student grades and assignments from PowerSchool portals using web-pilot browser automation.
 
 ## Automated Workflow
 
-When user asks to track their kids' school (phrases like "Help me track my kids' school", "Check my kids' grades in Seattle", "Seattle school homework tracker"):
+When user asks to track their kids' school (phrases like "Help me track my kids' school using PowerSchool", "Check my kids' grades", "PowerSchool homework tracker"):
 
 ### Step 1: Check Setup
 
@@ -39,7 +39,7 @@ npm run start
 This runs web-pilot with `--background` flag pointing to Seattle Public Schools PowerSchool.
 
 **Tell user:**
-> "A browser window has opened to Seattle Public Schools PowerSchool. Please log in, then type 'ready' when you're logged in."
+> "A browser window has opened to your PowerSchool portal. Please log in, then type 'ready' when you're logged in."
 
 ### Step 4: Detect Students
 
@@ -131,7 +131,7 @@ Get-ChildItem -Directory | Where-Object { $_.Name -ne 'node_modules' } | ForEach
 > - Attendance
 > - Action items
 >
-> Next time, just say 'Create new snapshots' and I'll update them!"
+> Next time, just say 'Create new snapshots' or 'Help me track my kids' school using PowerSchool' and I'll update them!"
 
 ## Subsequent Runs
 
@@ -148,9 +148,9 @@ When user asks to "Create new snapshots" or "Update grades":
 
 ## Important Notes
 
-### Seattle Public Schools Specifics
-- URL: https://ps.seattleschools.org
-- Portal: PowerSchool
+### PowerSchool Portal Specifics
+- URL: User's district PowerSchool URL (e.g., ps.districtname.org)
+- Portal: PowerSchool Student Information System
 - Student selector is usually in top navigation
 - Grades page shows Q1, Q2, S1, Q3, Q4, S2 columns
 - Format: "B 83" means B grade with 83%

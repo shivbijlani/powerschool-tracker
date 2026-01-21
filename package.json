@@ -1,7 +1,7 @@
 {
-  "name": "seattle-schools-tracker",
+  "name": "powerschool-tracker",
   "version": "1.0.0",
-  "description": "Track student grades and assignments from Seattle Public Schools PowerSchool",
+  "description": "Track student grades and assignments from PowerSchool using Copilot automation",
   "main": "index.js",
   "scripts": {
     "start": "npx web-pilot https://ps.seattleschools.org --background",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/shivbijlani/seattle-schools-tracker"
+    "url": "https://github.com/shivbijlani/powerschool-tracker"
   },
   "keywords": [
     "powerschool",

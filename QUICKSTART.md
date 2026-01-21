@@ -1,18 +1,18 @@
-# Quick Start Guide - Seattle Schools Tracker
+# Quick Start Guide - PowerSchool Tracker
 
 ## For First-Time Users
 
 ### Step 1: Get the Code
 ```bash
-git clone https://github.com/shivbijlani/seattle-schools-tracker.git
-cd seattle-schools-tracker
+git clone https://github.com/shivbijlani/powerschool-tracker.git
+cd powerschool-tracker
 code .
 ```
 
 ### Step 2: Ask Copilot
 Once VS Code opens:
 1. Press `Ctrl+Alt+I` (or `Cmd+Alt+I` on Mac) to open Copilot Chat
-2. Type: **"Help me track my kids' school in Seattle"**
+2. Type: **"Help me track my kids' school using PowerSchool"**
 3. Follow Copilot's instructions!
 
 ### What Copilot Will Do
