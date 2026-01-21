@@ -6,11 +6,21 @@ package-lock.json
 command.txt
 result.txt
 screenshot-*.png
+screen-*.png
 page-content.txt
 page.txt
+page-text.txt
 tables.json
 ids.json
 .web-pilot-prefs.json
+
+# Personal scripts and debug files
+analyze.js
+bot.js
+capture.js
+controller.js
+login.js
+*.txt
 
 # Student data folders (NEVER commit personal student information)
 */
