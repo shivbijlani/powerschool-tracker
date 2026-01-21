@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Web-pilot files
+command.txt
+result.txt
+screenshot-*.png
+page-content.txt
+page.txt
+tables.json
+ids.json
+.web-pilot-prefs.json
+
+# Student data folders (NEVER commit personal student information)
+*/
+!.github/
+!node_modules/
+
+# Keep only markdown files in root
+!*.md
+!package.json
+!.gitignore
+
+# Specific student folders to exclude
+leif/
+santi/
+bodi/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+temp/
+tmp/
+
+# Any homework snapshots
+homework-snapshot-*.md
+*-snapshot-*.md

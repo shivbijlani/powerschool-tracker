@@ -1,0 +1,31 @@
+{
+  "name": "seattle-schools-tracker",
+  "version": "1.0.0",
+  "description": "Track student grades and assignments from Seattle Public Schools PowerSchool",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx web-pilot https://ps.seattleschools.org --background",
+    "setup": "npx web-pilot --select-profile",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shivbijlani/seattle-schools-tracker"
+  },
+  "keywords": [
+    "powerschool",
+    "seattle",
+    "schools",
+    "grades",
+    "tracker",
+    "education",
+    "web-pilot",
+    "browser-automation"
+  ],
+  "author": "Shiv Bijlani",
+  "license": "MIT",
+  "dependencies": {
+    "@shivb/web-pilot": "git+https://github.com/shivbijlani/web-pilot.git",
+    "playwright": "^1.57.0"
+  }
+}
