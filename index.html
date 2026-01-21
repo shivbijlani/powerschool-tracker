@@ -200,6 +200,20 @@
             </div>
         </div>
         
+        <div class="section" style="background: #fef3c7; border: 3px solid #fbbf24;">
+            <h2>⚡ Super Quick Install (Windows)</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;"><strong>Starting from scratch? Copy this ONE command!</strong></p>
+            <p>Open PowerShell (search for "PowerShell" in Start menu, right-click, "Run as Administrator") and paste:</p>
+            <div class="code-box">winget install Microsoft.VisualStudioCode Git.Git OpenJS.NodeJS</div>
+            <p style="margin-top: 1rem;">This installs VS Code, Git, and Node.js all at once. Then skip to <strong>Step 3</strong> below!</p>
+            
+            <p style="margin-top: 1.5rem;"><strong>Alternative:</strong> Use Ninite to install everything with clicks:</p>
+            <a href="https://ninite.com/vscode-git-nodejs/" class="download-btn" target="_blank">Install with Ninite</a>
+            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
+                Ninite installs all three programs automatically. Just download and run!
+            </p>
+        </div>
+        
         <div class="section">
             <h2>🚀 Complete Setup Guide</h2>
             <p><strong>Total time: 5-10 minutes</strong></p>
@@ -208,6 +222,9 @@
                 <span class="step-number">1</span>
                 <h3>Install VS Code</h3>
                 <p>Visual Studio Code is a free code editor from Microsoft that includes GitHub Copilot.</p>
+                <p><strong>Windows Quick Install:</strong></p>
+                <div class="code-box">winget install Microsoft.VisualStudioCode</div>
+                <p style="margin-top: 1rem;">Or download manually:</p>
                 <a href="https://code.visualstudio.com/Download" class="download-btn" target="_blank">Download VS Code</a>
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
                     Choose Windows, Mac, or Linux. Run the installer and follow the prompts.
@@ -216,11 +233,15 @@
             
             <div class="step">
                 <span class="step-number">2</span>
-                <h3>Install Git</h3>
-                <p>Git is a tool for downloading code from GitHub. It's free and takes 2 minutes.</p>
+                <h3>Install Git & Node.js</h3>
+                <p>Git downloads code from GitHub. Node.js runs the automation tool.</p>
+                <p><strong>Windows Quick Install:</strong></p>
+                <div class="code-box">winget install Git.Git OpenJS.NodeJS</div>
+                <p style="margin-top: 1rem;">Or download manually:</p>
                 <a href="https://git-scm.com/downloads" class="download-btn" target="_blank">Download Git</a>
+                <a href="https://nodejs.org/" class="download-btn" target="_blank">Download Node.js</a>
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
-                    Run the installer. <strong>Accept all defaults</strong> - just keep clicking "Next".
+                    Run the installers. <strong>Accept all defaults</strong> - just keep clicking "Next".
                 </p>
             </div>
             
@@ -315,6 +336,12 @@
             
             <h3 style="margin-top: 1.5rem;">Copilot doesn't respond</h3>
             <p>Make sure you're signed in to GitHub Copilot. Look for the Copilot icon in the bottom-right of VS Code - it should show a checkmark.</p>
+            
+            <h3 style="margin-top: 1.5rem;">Don't have PowerShell as Administrator?</h3>
+            <p>No problem! Just download the installers manually from the links in each step. Or use the Ninite link at the top.</p>
+            
+            <h3 style="margin-top: 1.5rem;">winget not found?</h3>
+            <p>You might have an older Windows version. Use the manual download links instead, or <a href="https://ninite.com/vscode-git-nodejs/" target="_blank">try Ninite</a>.</p>
             
             <h3 style="margin-top: 1.5rem;">Browser doesn't open</h3>
             <p>Try running <code>npm install</code> in VS Code's terminal first. This installs the browser automation tool.</p>
