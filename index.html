@@ -345,6 +345,11 @@
             <h3 style="margin-top: 1.5rem;">Copilot doesn't respond</h3>
             <p>Make sure you're signed in to GitHub Copilot. Look for the Copilot icon in the bottom-right of VS Code - it should show a checkmark.</p>
             
+            <h3 style="margin-top: 1.5rem;">npm.ps1 cannot be loaded / running scripts is disabled?</h3>
+            <p>This is a PowerShell security setting. Open PowerShell and run:</p>
+            <div class="code-box">Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser</div>
+            <p style="margin-top: 0.5rem;">Type <code>Y</code> and press Enter to confirm. This allows npm to run and is safe for your user account.</p>
+            
             <h3 style="margin-top: 1.5rem;">npm command not found?</h3>
             <p>Node.js might not be installed or you need to restart VS Code after installing it. Close VS Code completely and reopen it, or install Node.js from <a href="https://nodejs.org/" target="_blank">nodejs.org</a>.</p>
             
