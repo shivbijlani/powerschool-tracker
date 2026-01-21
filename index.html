@@ -201,29 +201,36 @@
         </div>
         
         <div class="section" style="background: #fef3c7; border: 3px solid #fbbf24;">
-            <h2>⚡ Super Quick Install (Windows)</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 1rem;"><strong>Starting from scratch? Copy this ONE command!</strong></p>
-            <p>Open PowerShell (search for "PowerShell" in Start menu, right-click, "Run as Administrator") and paste:</p>
-            <div class="code-box">winget install Microsoft.VisualStudioCode Git.Git OpenJS.NodeJS</div>
-            <p style="margin-top: 1rem;">This installs:</p>
+            <h2>⚡ One Command Install (Windows)</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;"><strong>Copy and paste this ONE command - it handles everything!</strong></p>
+            <p>Open PowerShell (search "PowerShell" in Start menu, right-click, <strong>"Run as Administrator"</strong>) and paste:</p>
+            <div class="code-box">Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force; winget install Microsoft.VisualStudioCode Git.Git OpenJS.NodeJS --accept-package-agreements --accept-source-agreements</div>
+            <p style="margin-top: 1rem;">This ONE command:</p>
             <ul style="margin-left: 2rem;">
-                <li><strong>VS Code</strong> - Code editor with Copilot</li>
-                <li><strong>Git</strong> - Downloads the project</li>
-                <li><strong>Node.js</strong> - Runs the browser automation (includes npm)</li>
+                <li>✅ Fixes PowerShell script permissions (for npm)</li>
+                <li>✅ Installs <strong>VS Code</strong> - Code editor with Copilot</li>
+                <li>✅ Installs <strong>Git</strong> - Downloads the project</li>
+                <li>✅ Installs <strong>Node.js</strong> - Runs automation (includes npm)</li>
             </ul>
-            <p style="margin-top: 1rem;">After install completes, <strong>close and reopen PowerShell</strong>, then skip to <strong>Step 3</strong> below!</p>
+            <p style="margin-top: 1.5rem; font-size: 1.1rem;"><strong>After it finishes:</strong></p>
+            <ol style="margin-left: 2rem; font-size: 1.1rem;">
+                <li>Close PowerShell</li>
+                <li>Open VS Code (search "Visual Studio Code" in Start menu)</li>
+                <li>Skip to <strong>Step 3</strong> below</li>
+            </ol>
             
-            <p style="margin-top: 1.5rem;"><strong>Alternative:</strong> Use Ninite for VS Code + Git, then install Node.js separately:</p>
-            <a href="https://ninite.com/vscode-git/" class="download-btn" target="_blank">Install VS Code + Git with Ninite</a>
-            <a href="https://nodejs.org/" class="download-btn" target="_blank">Then Install Node.js</a>
-            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">
-                Ninite doesn't include Node.js, so you'll need to install it separately.
+            <p style="margin-top: 2rem; padding: 1rem; background: #e0e7ff; border-radius: 6px;">
+                <strong>Don't have winget?</strong> (Older Windows)<br>
+                Use manual installers: 
+                <a href="https://code.visualstudio.com/Download" target="_blank">VS Code</a>, 
+                <a href="https://git-scm.com/downloads" target="_blank">Git</a>, 
+                <a href="https://nodejs.org/" target="_blank">Node.js</a>
             </p>
         </div>
         
         <div class="section">
-            <h2>🚀 Complete Setup Guide</h2>
-            <p><strong>Total time: 5-10 minutes</strong></p>
+            <h2>🚀 Manual Setup (If You Already Have the Tools)</h2>
+            <p>Skip the command above if you already have VS Code, Git, and Node.js installed.</p>
             
             <div class="step">
                 <span class="step-number">1</span>
