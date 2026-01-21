@@ -200,31 +200,38 @@
             </div>
         </div>
         
-        <div class="section" style="background: #fef3c7; border: 3px solid #fbbf24;">
-            <h2>⚡ One Command Install (Windows)</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 1rem;"><strong>Copy and paste this ONE command - it handles everything!</strong></p>
-            <p>Open PowerShell (search "PowerShell" in Start menu, right-click, <strong>"Run as Administrator"</strong>) and paste:</p>
-            <div class="code-box">Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force; winget install Microsoft.VisualStudioCode Git.Git OpenJS.NodeJS --accept-package-agreements --accept-source-agreements</div>
-            <p style="margin-top: 1rem;">This ONE command:</p>
-            <ul style="margin-left: 2rem;">
-                <li>✅ Fixes PowerShell script permissions (for npm)</li>
-                <li>✅ Installs <strong>VS Code</strong> - Code editor with Copilot</li>
-                <li>✅ Installs <strong>Git</strong> - Downloads the project</li>
-                <li>✅ Installs <strong>Node.js</strong> - Runs automation (includes npm)</li>
-            </ul>
-            <p style="margin-top: 1.5rem; font-size: 1.1rem;"><strong>After it finishes:</strong></p>
-            <ol style="margin-left: 2rem; font-size: 1.1rem;">
-                <li>Close PowerShell</li>
-                <li>Open VS Code (search "Visual Studio Code" in Start menu)</li>
-                <li>Skip to <strong>Step 3</strong> below</li>
-            </ol>
+        <div class="section" style="background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); color: white; border: none; box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4);">
+            <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">⚡ COPY THIS ONE COMMAND</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 1.5rem; opacity: 0.95;">Installs VS Code + Git + Node.js + Fixes PowerShell — Everything you need!</p>
             
-            <p style="margin-top: 2rem; padding: 1rem; background: #e0e7ff; border-radius: 6px;">
-                <strong>Don't have winget?</strong> (Older Windows)<br>
-                Use manual installers: 
-                <a href="https://code.visualstudio.com/Download" target="_blank">VS Code</a>, 
-                <a href="https://git-scm.com/downloads" target="_blank">Git</a>, 
-                <a href="https://nodejs.org/" target="_blank">Node.js</a>
+            <p style="font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: bold;">1. Open PowerShell as Administrator</p>
+            <p style="font-size: 0.95rem; margin-bottom: 1rem; opacity: 0.9;">(Search "PowerShell", right-click, "Run as Administrator")</p>
+            
+            <p style="font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: bold;">2. Copy and paste this:</p>
+            <div class="code-box" style="font-size: 0.9rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force; winget install Microsoft.VisualStudioCode Git.Git OpenJS.NodeJS --accept-package-agreements --accept-source-agreements</div>
+            
+            <p style="font-size: 1.1rem; margin-top: 1.5rem; font-weight: bold;">3. Wait for it to finish (2-3 minutes)</p>
+            <p style="font-size: 1.1rem; font-weight: bold;">4. Close PowerShell and open VS Code</p>
+            <p style="font-size: 1.1rem; font-weight: bold;">5. Continue to Step 3 below ⬇️</p>
+            
+            <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 6px;">
+                <strong style="font-size: 1.1rem;">✅ This ONE command:</strong>
+                <ul style="margin-left: 2rem; margin-top: 0.5rem; font-size: 1rem;">
+                    <li>Fixes PowerShell permissions (for npm)</li>
+                    <li>Installs VS Code (code editor)</li>
+                    <li>Installs Git (downloads projects)</li>
+                    <li>Installs Node.js (runs automation)</li>
+                    <li>Accepts all prompts automatically</li>
+                </ul>
+            </div>
+            
+            <p style="margin-top: 1.5rem; padding: 1rem; background: rgba(0,0,0,0.2); border-radius: 6px;">
+                <strong>⚠️ Don't have winget?</strong> (Windows 7/8/older versions)<br>
+                Download manually: 
+                <a href="https://code.visualstudio.com/Download" style="color: #fde68a; text-decoration: underline;" target="_blank">VS Code</a>, 
+                <a href="https://git-scm.com/downloads" style="color: #fde68a; text-decoration: underline;" target="_blank">Git</a>, 
+                <a href="https://nodejs.org/" style="color: #fde68a; text-decoration: underline;" target="_blank">Node.js</a>
+                — Then run: <code style="background: rgba(0,0,0,0.3); padding: 0.2rem 0.5rem; border-radius: 3px;">Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force</code>
             </p>
         </div>
         
