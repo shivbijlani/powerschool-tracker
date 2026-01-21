@@ -201,78 +201,65 @@
         </div>
         
         <div class="section" style="background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%); color: white; border: none; box-shadow: 0 8px 24px rgba(239, 68, 68, 0.4);">
-            <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">⚡ COPY THIS ONE COMMAND</h2>
-            <p style="font-size: 1.3rem; margin-bottom: 1.5rem; opacity: 0.95;">Installs VS Code + Git + Node.js + Fixes PowerShell — Everything you need!</p>
+            <h2 style="color: white; font-size: 2.5rem; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">⚡ COPY THESE COMMANDS</h2>
+            <p style="font-size: 1.3rem; margin-bottom: 1.5rem; opacity: 0.95;">Installs everything + Downloads project + Creates desktop shortcut!</p>
             
             <p style="font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: bold;">1. Open PowerShell as Administrator</p>
             <p style="font-size: 0.95rem; margin-bottom: 1rem; opacity: 0.9;">(Search "PowerShell", right-click, "Run as Administrator")</p>
             
-            <p style="font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: bold;">2. Copy and paste this:</p>
-            <div class="code-box" style="font-size: 0.9rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3);">Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force; winget install Microsoft.VisualStudioCode Git.Git OpenJS.NodeJS --accept-package-agreements --accept-source-agreements</div>
+            <p style="font-size: 1.1rem; margin-bottom: 0.5rem; font-weight: bold;">2. Copy and paste this entire block:</p>
+            <div class="code-box" style="font-size: 0.85rem; box-shadow: 0 4px 12px rgba(0,0,0,0.3); text-align: left;"># Install VS Code, Git, Node.js and fix PowerShell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
+winget install Microsoft.VisualStudioCode Git.Git OpenJS.NodeJS --accept-package-agreements --accept-source-agreements
+
+# Refresh PATH so git works
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+
+# Clone the project to your user folder
+cd $env:USERPROFILE
+git clone https://github.com/shivbijlani/powerschool-tracker.git
+
+# Create desktop shortcut to open project in VS Code
+$WshShell = New-Object -comObject WScript.Shell
+$Shortcut = $WshShell.CreateShortcut("$env:USERPROFILE\Desktop\PowerSchool Tracker.lnk")
+$Shortcut.TargetPath = "$env:LOCALAPPDATA\Programs\Microsoft VS Code\Code.exe"
+$Shortcut.Arguments = "$env:USERPROFILE\powerschool-tracker"
+$Shortcut.WorkingDirectory = "$env:USERPROFILE\powerschool-tracker"
+$Shortcut.Save()
+
+Write-Host "`n✅ DONE! Double-click 'PowerSchool Tracker' on your desktop to get started!" -ForegroundColor Green</div>
             
-            <p style="font-size: 1.1rem; margin-top: 1.5rem; font-weight: bold;">3. Wait for it to finish (2-3 minutes)</p>
-            <p style="font-size: 1.1rem; font-weight: bold;">4. Close PowerShell and open VS Code</p>
+            <p style="font-size: 1.1rem; margin-top: 1.5rem; font-weight: bold;">3. Wait for it to finish (3-5 minutes)</p>
+            <p style="font-size: 1.1rem; font-weight: bold;">4. Double-click "PowerSchool Tracker" on your desktop</p>
             <p style="font-size: 1.1rem; font-weight: bold;">5. Continue to Step 3 below ⬇️</p>
             
             <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255,255,255,0.2); border-radius: 6px;">
-                <strong style="font-size: 1.1rem;">✅ This ONE command:</strong>
+                <strong style="font-size: 1.1rem;">✅ This does EVERYTHING:</strong>
                 <ul style="margin-left: 2rem; margin-top: 0.5rem; font-size: 1rem;">
-                    <li>Fixes PowerShell permissions (for npm)</li>
-                    <li>Installs VS Code (code editor)</li>
-                    <li>Installs Git (downloads projects)</li>
-                    <li>Installs Node.js (runs automation)</li>
+                    <li>Fixes PowerShell permissions</li>
+                    <li>Installs VS Code, Git, and Node.js</li>
+                    <li>Downloads the project to your home folder</li>
+                    <li>Creates a desktop shortcut to launch it</li>
                     <li>Accepts all prompts automatically</li>
                 </ul>
             </div>
             
             <p style="margin-top: 1.5rem; padding: 1rem; background: rgba(0,0,0,0.2); border-radius: 6px;">
-                <strong>⚠️ Don't have winget?</strong> (Windows 7/8/older versions)<br>
-                Download manually: 
-                <a href="https://code.visualstudio.com/Download" style="color: #fde68a; text-decoration: underline;" target="_blank">VS Code</a>, 
-                <a href="https://git-scm.com/downloads" style="color: #fde68a; text-decoration: underline;" target="_blank">Git</a>, 
-                <a href="https://nodejs.org/" style="color: #fde68a; text-decoration: underline;" target="_blank">Node.js</a>
-                — Then run: <code style="background: rgba(0,0,0,0.3); padding: 0.2rem 0.5rem; border-radius: 3px;">Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser -Force</code>
+                <strong>📍 Project location:</strong> C:\Users\YourName\powerschool-tracker<br>
+                <strong>🖥️ Desktop shortcut:</strong> Opens VS Code in the project folder<br>
+                <strong>⚠️ Old Windows?</strong> Install <a href="https://code.visualstudio.com/Download" style="color: #fde68a;" target="_blank">VS Code</a>, <a href="https://git-scm.com/downloads" style="color: #fde68a;" target="_blank">Git</a>, <a href="https://nodejs.org/" style="color: #fde68a;" target="_blank">Node.js</a> manually, then clone with: <code style="background: rgba(0,0,0,0.3); padding: 0.2rem 0.5rem; border-radius: 3px;">git clone https://github.com/shivbijlani/powerschool-tracker.git</code>
             </p>
         </div>
         
         <div class="section">
-            <h2>🚀 Manual Setup (If You Already Have the Tools)</h2>
-            <p>Skip the command above if you already have VS Code, Git, and Node.js installed.</p>
-            
-            <div class="step">
-                <span class="step-number">1</span>
-                <h3>Install VS Code</h3>
-                <p>Visual Studio Code is a free code editor from Microsoft that includes GitHub Copilot.</p>
-                <p><strong>Windows Quick Install:</strong></p>
-                <div class="code-box">winget install Microsoft.VisualStudioCode</div>
-                <p style="margin-top: 1rem;">Or download manually:</p>
-                <a href="https://code.visualstudio.com/Download" class="download-btn" target="_blank">Download VS Code</a>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
-                    Choose Windows, Mac, or Linux. Run the installer and follow the prompts.
-                </p>
-            </div>
-            
-            <div class="step">
-                <span class="step-number">2</span>
-                <h3>Install Git & Node.js</h3>
-                <p>Git downloads code from GitHub. Node.js runs the automation tool (includes npm for packages).</p>
-                <p><strong>Windows Quick Install:</strong></p>
-                <div class="code-box">winget install Git.Git OpenJS.NodeJS</div>
-                <p style="margin-top: 1rem;"><strong>After install, close and reopen any open terminals!</strong></p>
-                <p style="margin-top: 1rem;">Or download manually:</p>
-                <a href="https://git-scm.com/downloads" class="download-btn" target="_blank">Download Git</a>
-                <a href="https://nodejs.org/" class="download-btn" target="_blank">Download Node.js</a>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
-                    Run the installers. <strong>Accept all defaults</strong> - just keep clicking "Next". <strong>Both Git and Node.js are required!</strong>
-                </p>
-            </div>
+            <h2>🚀 Next Steps (After Running the Commands Above)</h2>
             
             <div class="step">
                 <span class="step-number">3</span>
                 <h3>Get GitHub Copilot</h3>
                 <p>GitHub Copilot is the AI that automates everything. <strong>First 30 days free!</strong></p>
                 <p style="margin-top: 1rem;">
-                    1. Open VS Code<br>
+                    1. VS Code should be open (from the desktop shortcut)<br>
                     2. Click the Extensions icon (or press <code>Ctrl+Shift+X</code>)<br>
                     3. Search for <span class="highlight">GitHub Copilot</span><br>
                     4. Click <strong>Install</strong><br>
@@ -283,21 +270,6 @@
             
             <div class="step">
                 <span class="step-number">4</span>
-                <h3>Clone This Project</h3>
-                <p>Download the PowerSchool Tracker code to your computer:</p>
-                <p style="margin-top: 1rem;">
-                    1. Open VS Code<br>
-                    2. Press <code>Ctrl+Shift+P</code> (or <code>Cmd+Shift+P</code> on Mac)<br>
-                    3. Type: <span class="highlight">Git: Clone</span><br>
-                    4. Paste this URL:
-                </p>
-                <div class="code-box">https://github.com/shivbijlani/powerschool-tracker.git</div>
-                <p>5. Choose a folder to save it<br>
-                   6. Click <strong>"Open"</strong> when prompted</p>
-            </div>
-            
-            <div class="step">
-                <span class="step-number">5</span>
                 <h3>Start Tracking!</h3>
                 <p>This is the magic part - one simple command does everything:</p>
                 <p style="margin-top: 1rem;">
